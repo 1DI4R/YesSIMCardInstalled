@@ -1,0 +1,2 @@
+# YesSIMCardInstalled
+Simple iOS Tweak
