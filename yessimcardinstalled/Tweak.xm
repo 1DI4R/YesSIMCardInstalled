@@ -9,8 +9,7 @@
     [NSMutableDictionary dictionaryWithContentsOfFile:[NSString stringWithFormat:@"%@/Library/Preferences/%@",NSHomeDirectory(),@"cf.1di4r.ysci_preference_bundle.plist"]];
     NSNumber* shouldNotify = [settings objectForKey:@"isEnabled"];
 
-    //cheking the switch is it on or off
-  if ([shouldNotify boolValue] == YES)
+if ([shouldNotify boolValue] == YES)
 
   {
     return 0;
