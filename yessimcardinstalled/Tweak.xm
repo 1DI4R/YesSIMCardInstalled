@@ -1,7 +1,7 @@
 //the code so simple and clean it does not need any comments
 
 
-%hook SBSIMLockAlertItem //hooking start from here
+%hook SBSIMLockAlertItem 
   
   - (bool)reappearsAfterUnlock {
     
