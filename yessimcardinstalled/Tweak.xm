@@ -1,22 +1,20 @@
-//the code so simple and clean it does not need any comments
-
 
 %hook SBSIMLockAlertItem 
   
   - (bool)reappearsAfterUnlock {
+
+    if ([Enabled]){
+    return 0;
     
+    } else {
+    return %orig;
+    }
+ }
+
+
+ %end
+%ctor {
     NSMutableDictionary *settings =
     [NSMutableDictionary dictionaryWithContentsOfFile:[NSString stringWithFormat:@"%@/Library/Preferences/%@",NSHomeDirectory(),@"cf.1di4r.ysci_preference_bundle.plist"]];
-    NSNumber* shouldNotify = [settings objectForKey:@"isEnabled"];
-
-if ([shouldNotify boolValue] == YES)
-
-  {
-    return 0;
-
-  } else {
-    return %orig;
-  }}
-
-
-  %end
+    BOOL Enabled = [settings objectForKey:@"isEnabled"];
+}
